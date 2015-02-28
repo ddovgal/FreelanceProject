@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - freelancedb@localhost" uuid="23c7ae29-762c-4110-b539-f04b1f411372">
+    <database-info product="MySQL" version="5.6.21-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="freelancedb"/>
+    <table name="complaint" schema="" catalog="freelancedb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="text" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="problem_order_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_complaint_order" columns="problem_order_id" ref-table="order" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_complaint_user" columns="user_id,user_type" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id,type_of_user_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="fk_complaint_order1_idx" unique="false" columns="problem_order_id"/>
+      <index name="fk_complaint_user_idx" unique="false" columns="user_id,user_type"/>
+    </table>
+    <table name="dialog_message" schema="" catalog="freelancedb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sender_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sendr_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="receiver_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="text" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_dialog_message_receiver" columns="receiver_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_dialog_message_sender" columns="sender_id,sendr_type" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id,type_of_user_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="fk_dialog_message_user1_idx" unique="false" columns="sender_id,sendr_type"/>
+      <index name="fk_dialog_message_user2_idx" unique="false" columns="receiver_id"/>
+    </table>
+    <table name="order" schema="" catalog="freelancedb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="description" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="deadline" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="price" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="finished" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="customer_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="developer_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="agreement" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_order_customer" columns="customer_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_order_developer" columns="developer_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_complaint_order" table="complaint" schema="" catalog="freelancedb" columns="problem_order_id"/>
+      <exported-key name="fk_service_message_problem_order" table="service_message" schema="" catalog="freelancedb" columns="problem_order_id"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="fk_order_developer_idx" unique="false" columns="developer_id"/>
+      <index name="fk_order_user1_idx" unique="false" columns="customer_id"/>
+    </table>
+    <table name="response" schema="" catalog="freelancedb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="text" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="mark" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_response_user" columns="user_id,user_type" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id,type_of_user_id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="fk_response_user1_idx" unique="false" columns="user_id,user_type"/>
+    </table>
+    <table name="service_message" schema="" catalog="freelancedb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="admin_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="problem_order_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="victim_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="victim_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="guilty_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="text" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_service_message_admin" columns="admin_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_service_message_guilty" columns="guilty_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_service_message_problem_order" columns="problem_order_id" ref-table="order" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="fk_service_message_victim" columns="victim_id,victim_type" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id,type_of_user_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="fk_service_message_admin_idx" unique="false" columns="admin_id"/>
+      <index name="fk_service_message_customer_idx" unique="false" columns="victim_id,victim_type"/>
+      <index name="fk_service_message_problem_order_idx" unique="false" columns="problem_order_id"/>
+      <index name="fk_service_message_user3_idx" unique="false" columns="guilty_id"/>
+    </table>
+    <table name="type_of_user" schema="" catalog="freelancedb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="fk_user_type_of_user" table="user" schema="" catalog="freelancedb" columns="type_of_user_id"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="name_UNIQUE" unique="true" columns="name"/>
+    </table>
+    <table name="user" schema="" catalog="freelancedb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type_of_user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="login" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="snf" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="birthday" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="email" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="rating" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <primary-key name="PRIMARY" columns="id,type_of_user_id"/>
+      <foreign-key name="fk_user_type_of_user" columns="type_of_user_id" ref-table="type_of_user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_complaint_user" table="complaint" schema="" catalog="freelancedb" columns="user_id,user_type"/>
+      <exported-key name="fk_dialog_message_receiver" table="dialog_message" schema="" catalog="freelancedb" columns="receiver_id"/>
+      <exported-key name="fk_dialog_message_sender" table="dialog_message" schema="" catalog="freelancedb" columns="sender_id,sendr_type"/>
+      <exported-key name="fk_order_customer" table="order" schema="" catalog="freelancedb" columns="customer_id"/>
+      <exported-key name="fk_order_developer" table="order" schema="" catalog="freelancedb" columns="developer_id"/>
+      <exported-key name="fk_response_user" table="response" schema="" catalog="freelancedb" columns="user_id,user_type"/>
+      <exported-key name="fk_service_message_admin" table="service_message" schema="" catalog="freelancedb" columns="admin_id"/>
+      <exported-key name="fk_service_message_guilty" table="service_message" schema="" catalog="freelancedb" columns="guilty_id"/>
+      <exported-key name="fk_service_message_victim" table="service_message" schema="" catalog="freelancedb" columns="victim_id,victim_type"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="login_UNIQUE" unique="true" columns="login"/>
+      <index name="fk_user_type_of_user_idx" unique="false" columns="type_of_user_id"/>
+    </table>
+  </data-source>
+</component>

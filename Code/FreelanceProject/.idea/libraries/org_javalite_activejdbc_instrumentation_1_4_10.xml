@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="org.javalite:activejdbc-instrumentation:1.4.10" type="repository">
+    <properties maven-id="org.javalite:activejdbc-instrumentation:1.4.10" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/activejdbc-instrumentation-1.4.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/maven-plugin-api-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/maven-project-3.0-alpha-2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

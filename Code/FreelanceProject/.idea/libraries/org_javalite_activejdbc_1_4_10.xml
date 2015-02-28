@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="org.javalite:activejdbc:1.4.10" type="repository">
+    <properties maven-id="org.javalite:activejdbc:1.4.10" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/activejdbc-1.4.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/servlet-api-2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jcl-over-slf4j-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-simple-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javalite-common-1.4.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/oscache-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ehcache-core-2.4.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

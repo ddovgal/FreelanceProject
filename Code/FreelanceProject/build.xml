@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Freelance Project" basedir=".">
+
+    <property name="classes" value="out/production/FreelanceProject"/>
+
+    <path id="compile_classpath">
+        <pathelement location="${classes}"/>
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete dir="${classes}" failonerror="true"/>
+        <mkdir dir="${classes}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <javac srcdir="src" destdir="${classes}" debug="on" optimize="off" deprecation="off" includeantruntime="false">
+            <classpath refid="compile_classpath"/>
+        </javac>
+    </target>
+
+    <target name="instrument" depends="compile">
+        <java classname="org.javalite.instrumentation.Main">
+            <sysproperty key="outputDirectory" value="${classes}"/>
+            <classpath refid="compile_classpath"/>
+        </java>
+    </target>
+
+</project>
