@@ -8,4 +8,8 @@ import org.javalite.activejdbc.annotations.Table;
  */
 @Table("type_of_user")
 public class UserType extends Model {
+
+    public String getType(){
+        return getString("name");
+    }
 }

@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22413d50-6c12-4e75-a965-eabb7ec7e105" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\.idea\libraries\mysql_connector_java_5_1_33_bin.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Config\Configuration.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Config\applicationConfiguration\ApplicationConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Config\readers\JSONReader.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Config\readers\Reader.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Config\writers\JSONWriter.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Config\writers\Writer.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Tables\Complaint.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Tables\DialogMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Tables\Order.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Tables\Response.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Tables\ServiceMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Tables\TestTable.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Tables\User.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\Tables\UserType.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\TestingClass.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\out\production\FreelanceProject\activejdbc_models.properties" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="22413d50-6c12-4e75-a965-eabb7ec7e105" name="Default" comment="Add getters and setters for all tables">
+      <change type="DELETED" beforePath="E:\Trash\Current projects\Freelance Project\Code\FreelanceProject\src\Tables\TestTable.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DB Model/FreelanceDB model.mwb" afterPath="$PROJECT_DIR$/../../DB Model/FreelanceDB model.mwb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tables/Complaint.java" afterPath="$PROJECT_DIR$/src/Tables/Complaint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tables/DialogMessage.java" afterPath="$PROJECT_DIR$/src/Tables/DialogMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tables/Order.java" afterPath="$PROJECT_DIR$/src/Tables/Order.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tables/Response.java" afterPath="$PROJECT_DIR$/src/Tables/Response.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tables/ServiceMessage.java" afterPath="$PROJECT_DIR$/src/Tables/ServiceMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingClass.java" afterPath="$PROJECT_DIR$/src/TestingClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tables/User.java" afterPath="$PROJECT_DIR$/src/Tables/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tables/UserType.java" afterPath="$PROJECT_DIR$/src/Tables/UserType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FreelanceProject.iws" />
@@ -66,24 +58,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestingClass.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestingClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestingClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-              <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.34537247" vertical-offset="0" max-vertical-offset="886">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Tables/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15332581" vertical-offset="0" max-vertical-offset="887">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -97,13 +79,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/MVC.java" />
-        <option value="$PROJECT_DIR$/src/Tables/User.java" />
-        <option value="$PROJECT_DIR$/src/Tables/Complaint.java" />
-        <option value="$PROJECT_DIR$/src/Tables/ServiceMessage.java" />
-        <option value="$PROJECT_DIR$/src/Tables/DialogMessage.java" />
-        <option value="$PROJECT_DIR$/src/Tables/Response.java" />
-        <option value="$PROJECT_DIR$/src/Tables/UserType.java" />
-        <option value="$PROJECT_DIR$/src/Tables/TestTable.java" />
         <option value="$PROJECT_DIR$/src/Config/Configuration.java" />
         <option value="$PROJECT_DIR$/src/Config/readers/Reader.java" />
         <option value="$PROJECT_DIR$/src/Config/writers/JSONWriter.java" />
@@ -115,7 +90,14 @@
         <option value="$PROJECT_DIR$/json/config.json" />
         <option value="$PROJECT_DIR$/out/production/FreelanceProject/Tables/Order.class" />
         <option value="db-console:/b4eec3f5/23c7ae29-762c-4110-b539-f04b1f411372/" />
+        <option value="$PROJECT_DIR$/src/Tables/UserType.java" />
+        <option value="$PROJECT_DIR$/src/Tables/Complaint.java" />
+        <option value="$PROJECT_DIR$/src/Tables/DialogMessage.java" />
         <option value="$PROJECT_DIR$/src/Tables/Order.java" />
+        <option value="$PROJECT_DIR$/src/Tables/ServiceMessage.java" />
+        <option value="$PROJECT_DIR$/src/Tables/TestTable.java" />
+        <option value="$PROJECT_DIR$/src/Tables/Response.java" />
+        <option value="$PROJECT_DIR$/src/Tables/User.java" />
         <option value="$PROJECT_DIR$/src/TestingClass.java" />
       </list>
     </option>
@@ -245,6 +227,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="908" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -423,11 +406,12 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="ToolWindowManager">
     <frame x="-5" y="-5" width="1690" height="1060" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -435,6 +419,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858709" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20721272" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -444,13 +429,11 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13386308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858709" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -470,6 +453,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Solve Order table error by renaming to &quot;order&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solve Order table error by renaming to &quot;order&quot;" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -506,7 +491,9 @@
     </GetOptions>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -622,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tables/TestTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="221">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="612">
@@ -644,20 +624,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tables/TestTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tables/TestTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1737649" vertical-offset="0" max-vertical-offset="587">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -736,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tables/Complaint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15332581" vertical-offset="0" max-vertical-offset="887">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3449831" vertical-offset="0" max-vertical-offset="887">
@@ -751,21 +710,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestingClass.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/sql/Date.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.33295712" vertical-offset="1915" max-vertical-offset="4590">
+          <caret line="156" column="18" selection-start-line="156" selection-start-column="18" selection-end-line="156" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tables/Complaint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3837472" vertical-offset="0" max-vertical-offset="886">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tables/DialogMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53724605" vertical-offset="0" max-vertical-offset="886">
+          <caret line="49" column="5" selection-start-line="43" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tables/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15332581" vertical-offset="0" max-vertical-offset="887">
+        <state vertical-scroll-proportion="0.69074494" vertical-offset="0" max-vertical-offset="886">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tables/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15349887" vertical-offset="0" max-vertical-offset="886">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tables/ServiceMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6331828" vertical-offset="0" max-vertical-offset="886">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tables/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15349887" vertical-offset="0" max-vertical-offset="886">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tables/UserType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1918736" vertical-offset="0" max-vertical-offset="886">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestingClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34537247" vertical-offset="0" max-vertical-offset="886">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

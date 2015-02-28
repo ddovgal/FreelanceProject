@@ -11,6 +11,15 @@ public class TestingClass {
         System.out.println(ServiceMessage.findFirst("id = ?", "1").get("text"));
         System.out.println(DialogMessage.findFirst("id = ?", "1").get("text"));
         System.out.println(UserType.findFirst("id = ?", "1").get("name"));
+
+        System.out.println();
+        Order order = Order.findFirst("description = ?", "do nothing");
+        System.out.println(order.getAgreement());
+        System.out.println();
+
+        User user = User.findById(2);
+        System.out.println(UserType.findById(user.getTypeOfUserId()).get("name"));
+
         Base.close();
 
     }
