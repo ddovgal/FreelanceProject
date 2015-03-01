@@ -3,11 +3,69 @@ package Tables;
 import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.Table;
 
+import java.util.List;
+
 /**
  * Created by Error_404 on 27.02.2015.
  */
 @Table("user")
 public class User extends Model {
+
+    private static Object justCreatedRowId;
+
+    public User(){}
+
+    private User(int type, String login, String password, String snf){
+        User tmp = new User();
+        tmp.setTypeOfUserId(type);
+        tmp.setLogin(login);
+        tmp.setPassword(password);
+        tmp.setSnf(snf);
+        tmp.setRating(0);
+        tmp.saveIt();
+        justCreatedRowId = tmp.getId();
+    }
+
+    public static User newInstance(int type, String login, String password, String snf){
+        new User(type, login, password, snf);
+        return findById(justCreatedRowId);
+    }
+
+    //------------------------------------------------------Find--------------------------------------------------------
+
+    public static User findById(int id){
+        return findById(new Integer(id));
+    }
+
+    public static List<User> findByTypeOfUserId(int id){
+        return where("type_of_user_id = ?", id);
+    }
+
+    public static User findByLogin(String login){
+        return findFirst("login = ?", login);
+    }
+
+    public static User findByPassword(String password){
+        return findFirst("password = ?", password);
+    }
+
+    public static User findBySnf(String snf){
+        return findFirst("snf = ?", snf);
+    }
+
+    public static List<User> findByBirthday(String birthday){
+        return where("birthday = ?", birthday);
+    }
+
+    public static List<User> findByEmail(String email){
+        return where("email = ?", email);
+    }
+
+    public static List<User> findByRating(double rating){
+        return where("rating = ?", rating);
+    }
+
+    //----------------------------------------------Setters and getters-------------------------------------------------
 
     public void setTypeOfUserId(int id){
         setInteger("type_of_user_id", id);
