@@ -1,6 +1,6 @@
-package Config.writers;
+package config.writers;
 
-import Config.Configuration;
+import config.Configuration;
 
 /**
  * Даний інтерфейс містить метод <code>save()</code>, який можна використовувати

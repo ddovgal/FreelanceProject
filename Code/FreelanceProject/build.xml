@@ -11,12 +11,12 @@
     </path>
 
     <target name="clean">
-        <delete dir="${classes}" failonerror="true"/>
-        <mkdir dir="${classes}"/>
+        <delete dir="${classes}/tables" failonerror="true"/>
+        <mkdir dir="${classes}/tables"/>
     </target>
 
     <target name="compile" depends="clean">
-        <javac srcdir="src" destdir="${classes}" debug="on" optimize="off" deprecation="off" includeantruntime="false">
+        <javac srcdir="src/tables" destdir="${classes}" debug="on" optimize="off" deprecation="off" includeantruntime="false">
             <classpath refid="compile_classpath"/>
         </javac>
     </target>

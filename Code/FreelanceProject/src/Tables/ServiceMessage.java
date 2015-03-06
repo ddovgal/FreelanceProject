@@ -1,4 +1,4 @@
-package Tables;
+package tables;
 
 import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.Table;
@@ -15,7 +15,7 @@ public class ServiceMessage extends Model {
 
     public ServiceMessage(){}
 
-    private ServiceMessage(int adminId, int problemOrderId, int victimId, int victimType, int guiltyId, String text){
+    private ServiceMessage(int adminId, int problemOrderId, int victimId, int victimType, int guiltyId, String text, boolean readed){
         ServiceMessage tmp = new ServiceMessage();
         tmp.setAdminId(adminId);
         tmp.setProblemOrderId(problemOrderId);
@@ -23,12 +23,13 @@ public class ServiceMessage extends Model {
         tmp.setVictimType(victimType);
         tmp.setGuiltyId(guiltyId);
         tmp.setText(text);
+        tmp.setReaded(readed);
         tmp.saveIt();
         justCreatedRowId = tmp.getId();
     }
 
-    public static ServiceMessage newInstance(int adminId, int problemOrderId, int victimId, int victimType, int guiltyId, String text){
-        new ServiceMessage(adminId, problemOrderId, victimId, victimType, guiltyId, text);
+    public static ServiceMessage newInstance(int adminId, int problemOrderId, int victimId, int victimType, int guiltyId, String text, boolean readed){
+        new ServiceMessage(adminId, problemOrderId, victimId, victimType, guiltyId, text, readed);
         return findById(justCreatedRowId);
     }
 
@@ -60,6 +61,10 @@ public class ServiceMessage extends Model {
 
     public static ServiceMessage findByText(String text){
         return findFirst("text = ?", text);
+    }
+
+    public static List<ServiceMessage> findByReaded(boolean readed){
+        return where("readed = ?", readed);
     }
 
     //----------------------------------------------Setters and getters-------------------------------------------------
@@ -110,6 +115,14 @@ public class ServiceMessage extends Model {
 
     public String getText(){
         return getString("text");
+    }
+
+    public void setReaded(boolean readed){
+        setBoolean("readed", readed);
+    }
+
+    public boolean getReaded(){
+        return getBoolean("readed");
     }
 
 }

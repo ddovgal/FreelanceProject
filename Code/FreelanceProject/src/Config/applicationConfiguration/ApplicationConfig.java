@@ -1,10 +1,10 @@
-package Config.applicationConfiguration;
+package config.applicationConfiguration;
 
-import Config.Configuration;
-import Config.readers.JSONReader;
-import Config.readers.Reader;
-import Config.writers.JSONWriter;
-import Config.writers.Writer;
+import config.Configuration;
+import config.readers.JSONReader;
+import config.readers.Reader;
+import config.writers.JSONWriter;
+import config.writers.Writer;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -50,7 +50,7 @@ public class ApplicationConfig {
     /**
      * Встановлює <code>Reader</code>, з якого можна
      * зчитувати конфігурацію
-     * @param configReader - будь-який клас, що реалізовує інтерфейс {@link Config.readers.Reader}
+     * @param configReader - будь-який клас, що реалізовує інтерфейс {@link config.readers.Reader}
      */
     public void setReader(Reader configReader){
         this.configReader = configReader;
@@ -75,7 +75,7 @@ public class ApplicationConfig {
     /**
      * Встановлює <code>Writer</code>, який буде використовуватись для
      * запису конфігурації
-     * @param configWriter - будь-який клас, що реалізовує інтерфейс {@link Config.writers.Writer}
+     * @param configWriter - будь-який клас, що реалізовує інтерфейс {@link config.writers.Writer}
      */
     public void setWriter(Writer configWriter){
         this.configWriter = configWriter;

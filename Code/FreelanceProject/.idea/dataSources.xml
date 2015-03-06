@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2307902017">
+  <component name="DataSourceManagerImpl" format="xml" hash="3946197710">
     <data-source source="LOCAL" name="MySQL - freelancedb@localhost" uuid="23c7ae29-762c-4110-b539-f04b1f411372">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

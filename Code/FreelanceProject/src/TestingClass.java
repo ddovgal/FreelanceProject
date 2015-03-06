@@ -1,49 +1,62 @@
-import Tables.Complaint;
-import Tables.DialogMessage;
 import org.javalite.activejdbc.Base;
+import org.javalite.test.jspec.TestException;
+import tables.User;
+
+import java.io.File;
+
 
 public class TestingClass {
     public static void main(String[] args) {
-
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/freelancedb", "root", "1111");
 
+        User user = User.findByLogin("test");
 
-        /*System.out.println(User.findFirst("login = ?", "admin").get("snf"));
-        System.out.println(Order.findFirst("description = ?", "do nothing").get("agreement"));
-        System.out.println(Complaint.findById(1).get("text"));
-        System.out.println(ServiceMessage.findFirst("id = ?", "1").get("text"));
-        System.out.println(DialogMessage.findFirst("id = ?", "1").get("text"));
-        System.out.println(UserType.findFirst("id = ?", "1").get("name"));
+        user.setImage(new File("My avatar.jpg"));
+        user.saveIt();
 
-        System.out.println();
-        Order order = Order.findFirst("description = ?", "do nothing");
-        System.out.println(order.getAgreement());
-        System.out.println();
+        //Image image = user.getImage();
+        //System.out.println();
+        /*//-------------
+        FileInputStream fileInputStream=null;
 
-        System.out.println();
-        Complaint.findByProblemOrderId(1).get(0).getText();
-        System.out.println(Complaint.findByUserId(2).get(0).getText());
-        System.out.println();
+        File file = new File("My avatar.jpg");
 
-        User user = User.findById(2);
-        System.out.println(UserType.findById(user.getTypeOfUserId()).get("name"));
+        byte[] imageBytes = new byte[(int) file.length()];
 
-        System.out.println(Order.findById(1).getAgreement());
-        //new Order("sd", "1990-11-11", 12.44, 2, "dsd");*/
+        try {
+            //convert file into array of bytes
+            fileInputStream = new FileInputStream(file);
+            fileInputStream.read(imageBytes);
+            fileInputStream.close();
+            System.out.println("Done");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        user.set("image", imageBytes);
+        user.saveIt();
+        //-------------
 
+        //-------------
+        byte[] image1Bytes = user.getBytes("image");
 
-        Complaint complaint = Complaint.newInstance(3, 3, "Плохо себя вел", 1);
-        complaint.setText("Not true");
-        complaint.saveIt();
+        FileOutputStream stream = new FileOutputStream("lol.png");
+        try {
+            stream.write(image1Bytes);
+        } finally {
+            stream.close();
+        }
+        //-------------
 
-        DialogMessage dialogMessage = DialogMessage.newInstance(3, 3, 2, "Hello", "1111-11-11");
-        System.out.println(dialogMessage.getText());
-        dialogMessage.setText("Text 2");
-        System.out.println(dialogMessage.getText());
-        dialogMessage.saveIt();
-        System.out.println(dialogMessage.getText());
+        assertEqual(imageBytes, image1Bytes);*/
 
         Base.close();
+    }
 
+    private static void assertEqual(byte[] igor, byte[] igor1) {
+        if(igor.length != igor1.length) throw new TestException("arrays not equal");
+        for(int i = 0 ; i < igor.length ; i++){
+            if(igor[i] != igor1[i])
+                throw new TestException("arrays not equal");
+        }
     }
 }

@@ -1,6 +1,6 @@
-package Config.writers;
+package config.writers;
 
-import Config.Configuration;
+import config.Configuration;
 
 import java.io.File;
 import java.io.FileWriter;

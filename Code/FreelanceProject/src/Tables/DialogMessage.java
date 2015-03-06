@@ -1,4 +1,4 @@
-package Tables;
+package tables;
 
 import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.Table;
@@ -15,19 +15,20 @@ public class DialogMessage extends Model {
 
     public DialogMessage(){}
 
-    private DialogMessage(int senderId, int userType, int receiverId, String text, String time){
+    private DialogMessage(int senderId, int userType, int receiverId, String text, String time, boolean readed){
         DialogMessage tmp = new DialogMessage();
         tmp.setSenderId(senderId);
         tmp.setSenderType(userType);
         tmp.setReceiverId(receiverId);
         tmp.setText(text);
         tmp.setTime(time);
+        tmp.setReaded(readed);
         tmp.saveIt();
         justCreatedRowId = tmp.getId();
     }
 
-    public static DialogMessage newInstance(int senderId, int userType, int receiverId, String text, String time){
-        new DialogMessage(senderId, userType, receiverId, text, time);
+    public static DialogMessage newInstance(int senderId, int userType, int receiverId, String text, String time, boolean readed){
+        new DialogMessage(senderId, userType, receiverId, text, time, readed);
         return findById(justCreatedRowId);
     }
 
@@ -55,6 +56,10 @@ public class DialogMessage extends Model {
 
     public static DialogMessage findByTime(String time){
         return findFirst("time = ?", time);
+    }
+
+    public static List<DialogMessage> findByReaded(boolean readed){
+        return where("readed = ?", readed);
     }
 
     //----------------------------------------------Setters and getters-------------------------------------------------
@@ -97,6 +102,14 @@ public class DialogMessage extends Model {
 
     public String getTime(){
         return getDate("time").toString();
+    }
+
+    public void setReaded(boolean readed){
+        setBoolean("readed", readed);
+    }
+
+    public boolean getReaded(){
+        return getBoolean("readed");
     }
 
 }

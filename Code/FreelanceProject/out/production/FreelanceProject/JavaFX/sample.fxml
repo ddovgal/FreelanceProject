@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="231.0" prefWidth="203.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.Controller">
+    <children>
+        <Button layoutX="14.0" layoutY="149.0" mnemonicParsing="false" prefWidth="81.0" text="Cancel" />
+        <Button fx:id="ok" layoutX="108.0" layoutY="149.0" mnemonicParsing="false" onAction="#onClick" prefWidth="81.0" text="Login" />
+        <Label layoutX="14.0" layoutY="22.0" text="Login:" />
+        <PasswordField fx:id="passF" layoutX="8.0" layoutY="101.0" prefWidth="187.0" promptText="Enter user password here" />
+        <TextField fx:id="loginF" layoutX="8.0" layoutY="45.0" prefWidth="187.0" promptText="Enter user login here" />
+        <Label layoutX="14.0" layoutY="81.0" text="Password:" />
+      <TextField fx:id="ipF" layoutX="33.0" layoutY="187.0" promptText="Enter ip of DB to connect" />
+    </children>
+</AnchorPane>

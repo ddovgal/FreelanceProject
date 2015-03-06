@@ -7,6 +7,17 @@
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <schema name="" catalog="freelancedb"/>
+    <table name="applicant_to_order" schema="" catalog="freelancedb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="developer_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="order_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_pretendent_to_order_order" columns="order_id" ref-table="order" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_pretendent_to_order_user" columns="developer_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="fk_pretendent_to_order_order1_idx" unique="false" columns="order_id"/>
+      <index name="fk_pretendent_to_order_user1_idx" unique="false" columns="developer_id"/>
+    </table>
     <table name="complaint" schema="" catalog="freelancedb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -23,15 +34,16 @@
     <table name="dialog_message" schema="" catalog="freelancedb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="sender_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="sendr_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sender_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="receiver_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="text" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="readed" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="fk_dialog_message_receiver" columns="receiver_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_dialog_message_sender" columns="sender_id,sendr_type" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id,type_of_user_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_dialog_message_sender" columns="sender_id,sender_type" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id,type_of_user_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="id_UNIQUE" unique="true" columns="id"/>
-      <index name="fk_dialog_message_user1_idx" unique="false" columns="sender_id,sendr_type"/>
+      <index name="fk_dialog_message_user1_idx" unique="false" columns="sender_id,sender_type"/>
       <index name="fk_dialog_message_user2_idx" unique="false" columns="receiver_id"/>
     </table>
     <table name="order" schema="" catalog="freelancedb" type="TABLE">
@@ -46,6 +58,7 @@
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="fk_order_customer" columns="customer_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_order_developer" columns="developer_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_pretendent_to_order_order" table="applicant_to_order" schema="" catalog="freelancedb" columns="order_id"/>
       <exported-key name="fk_complaint_order" table="complaint" schema="" catalog="freelancedb" columns="problem_order_id"/>
       <exported-key name="fk_service_message_problem_order" table="service_message" schema="" catalog="freelancedb" columns="problem_order_id"/>
       <index name="id_UNIQUE" unique="true" columns="id"/>
@@ -72,6 +85,7 @@
       <column name="victim_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="guilty_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="text" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="readed" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="fk_service_message_admin" columns="admin_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_service_message_guilty" columns="guilty_id" ref-table="user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
@@ -100,11 +114,13 @@
       <column name="birthday" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
       <column name="email" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
       <column name="rating" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="image" sqlType="LONGBLOB" precision="2147483647" scale="0" nullable="true" jdbcType="-4"/>
       <primary-key name="PRIMARY" columns="id,type_of_user_id"/>
       <foreign-key name="fk_user_type_of_user" columns="type_of_user_id" ref-table="type_of_user" ref-schema="" ref-catalog="freelancedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_pretendent_to_order_user" table="applicant_to_order" schema="" catalog="freelancedb" columns="developer_id"/>
       <exported-key name="fk_complaint_user" table="complaint" schema="" catalog="freelancedb" columns="user_id,user_type"/>
       <exported-key name="fk_dialog_message_receiver" table="dialog_message" schema="" catalog="freelancedb" columns="receiver_id"/>
-      <exported-key name="fk_dialog_message_sender" table="dialog_message" schema="" catalog="freelancedb" columns="sender_id,sendr_type"/>
+      <exported-key name="fk_dialog_message_sender" table="dialog_message" schema="" catalog="freelancedb" columns="sender_id,sender_type"/>
       <exported-key name="fk_order_customer" table="order" schema="" catalog="freelancedb" columns="customer_id"/>
       <exported-key name="fk_order_developer" table="order" schema="" catalog="freelancedb" columns="developer_id"/>
       <exported-key name="fk_response_user" table="response" schema="" catalog="freelancedb" columns="user_id,user_type"/>

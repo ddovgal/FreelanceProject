@@ -1,6 +1,6 @@
-package Config.readers;
+package config.readers;
 
-import Config.Configuration;
+import config.Configuration;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 

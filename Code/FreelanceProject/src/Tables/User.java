@@ -1,8 +1,13 @@
-package Tables;
+package tables;
 
+import javafx.scene.image.Image;
 import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.Table;
+import util.MessageDialogs;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.List;
 
 /**
@@ -15,19 +20,20 @@ public class User extends Model {
 
     public User(){}
 
-    private User(int type, String login, String password, String snf){
+    private User(int type, String login, String password, String snf, File imageFile){
         User tmp = new User();
         tmp.setTypeOfUserId(type);
         tmp.setLogin(login);
         tmp.setPassword(password);
         tmp.setSnf(snf);
         tmp.setRating(0);
+        tmp.setImage(imageFile);
         tmp.saveIt();
         justCreatedRowId = tmp.getId();
     }
 
-    public static User newInstance(int type, String login, String password, String snf){
-        new User(type, login, password, snf);
+    public static User newInstance(int type, String login, String password, String snf, File imageFile){
+        new User(type, login, password, snf, imageFile);
         return findById(justCreatedRowId);
     }
 
@@ -121,6 +127,22 @@ public class User extends Model {
 
     public double getRating(){
         return getDouble("rating");
+    }
+
+    public void setImage(File imageFile){
+        byte[] imageBytes = new byte[(int) imageFile.length()];
+        try {
+            FileInputStream fileInputStream = new FileInputStream(imageFile);
+            fileInputStream.read(imageBytes);
+            set("image", imageBytes);
+        }catch(Exception e){
+            MessageDialogs.exceptionDialog(e, "Setting user image exception", "Error at uploading user image to current database");
+        }
+    }
+
+    public Image getImage(){
+        if (get("image")!=null) return new Image(new ByteArrayInputStream(getBytes("image")));
+        else return null;
     }
 
 }

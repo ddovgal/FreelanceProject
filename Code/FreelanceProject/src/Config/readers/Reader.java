@@ -1,6 +1,6 @@
-package Config.readers;
+package config.readers;
 
-import Config.Configuration;
+import config.Configuration;
 
 /**
  * Інтерфейс повинні реалізовувати всі класи, які будуть
@@ -11,7 +11,7 @@ import Config.Configuration;
 public interface Reader {
     /**
      * Метод виконує зчитування конфігурації
-     * @return повертає об'ект типу {@link Config.Configuration}
+     * @return повертає об'ект типу {@link config.Configuration}
      */
     public Configuration load();
 }

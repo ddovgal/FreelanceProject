@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.2537688442211055" orientation="VERTICAL" pickOnBounds="false" prefHeight="579.0" prefWidth="843.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.controllers.MainIntroFormController">
+  <items>
+      <BorderPane maxHeight="-Infinity" prefHeight="117.0" prefWidth="598.0">
+         <left>
+            <ImageView fx:id="userImage" fitHeight="101.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="15.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </left>
+         <center>
+            <FlowPane orientation="VERTICAL" prefHeight="98.0" prefWidth="125.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="nameLabel" text="Surname Name">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emailLabel" layoutX="10.0" layoutY="10.0" text="email">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+            </FlowPane>
+         </center>
+         <right>
+            <GridPane alignment="BOTTOM_RIGHT" prefHeight="82.0" prefWidth="202.0" BorderPane.alignment="BOTTOM_RIGHT">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="editProfileButton" mnemonicParsing="false" text="Edit prifile" />
+                  <Button fx:id="newOrderButton" mnemonicParsing="false" text="New Order" GridPane.columnIndex="1" />
+                  <Button fx:id="myMessagesButton" mnemonicParsing="false" text="My messages" GridPane.rowIndex="1" />
+                  <Button fx:id="signOutButtom" mnemonicParsing="false" text="Sign out" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </right>
+      </BorderPane>
+      <TabPane prefHeight="277.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="My current orders">
+               <content>
+                  <ListView fx:id="orderList" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+          </Tab>
+          <Tab fx:id="developersList" text="My current working developers">
+               <content>
+                  <ListView fx:id="workingDevelopersList" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+  </items>
+</SplitPane>
