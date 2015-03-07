@@ -49,7 +49,7 @@
               </rowConstraints>
                <children>
                   <Button fx:id="editProfileButton" mnemonicParsing="false" text="Edit prifile" />
-                  <Button fx:id="newOrderButton" mnemonicParsing="false" text="New Order" GridPane.columnIndex="1" />
+                  <Button fx:id="newOrderButton" mnemonicParsing="false" onAction="#showNewOrderStage" text="New Order" GridPane.columnIndex="1" />
                   <Button fx:id="myMessagesButton" mnemonicParsing="false" text="My messages" GridPane.rowIndex="1" />
                   <Button fx:id="signOutButtom" mnemonicParsing="false" text="Sign out" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>

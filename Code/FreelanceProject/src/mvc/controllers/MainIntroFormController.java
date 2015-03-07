@@ -1,15 +1,22 @@
 package mvc.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import mvc.GlobalIntro;
 import tables.User;
+import util.MessageDialogs;
+
+import java.io.IOException;
 
 /**
  * Created by Error_404 on 04.03.2015.
@@ -56,6 +63,30 @@ public class MainIntroFormController {
         emailLabel.setText(currentUser.getEmail());
         //orderList TODO: change
         //workingDevelopersList TODO: change
+    }
+
+    @FXML
+    private void showNewOrderStage(){
+        globalIntro.showNewOrderStage();
+        /*Stage primaryStage = new Stage();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("views/NewOrederFrame.fxml"));
+
+        try {
+            FlowPane root = loader.load();
+            //MainIntroFormController controller = loader.getController();
+
+            primaryStage.setTitle("Add nw order");
+            primaryStage.setScene(new Scene(root));
+            primaryStage.getIcons().add(new Image("mvc/views/favicon.png"));
+
+            //controller.initStage(this); TODO: change
+
+            //this.primaryStage = primaryStage;
+            primaryStage.showAndWait();
+        } catch (IOException e) {
+            MessageDialogs.exceptionDialog(e, "Creating Add new order form exception", "Error at creating Add new order form");
+        }*/
     }
 
 }

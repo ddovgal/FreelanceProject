@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import mvc.controllers.LoginFormController;
@@ -85,6 +86,28 @@ public class GlobalIntro extends Application{
 
     public Stage getPrimaryStage(){
         return primaryStage;
+    }
+
+    public void showNewOrderStage(){
+        Stage primaryStage = new Stage();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("views/NewOrederFrame.fxml"));
+
+        try {
+            FlowPane root = loader.load();
+            //MainIntroFormController controller = loader.getController();
+
+            primaryStage.setTitle("Add nw order");
+            primaryStage.setScene(new Scene(root));
+            primaryStage.getIcons().add(new Image("mvc/views/favicon.png"));
+
+            //controller.initStage(this); TODO: change
+
+            //this.primaryStage = primaryStage;
+            primaryStage.showAndWait();
+        } catch (IOException e) {
+            MessageDialogs.exceptionDialog(e, "Creating Add new order form exception", "Error at creating Add new order form");
+        }
     }
 
 
