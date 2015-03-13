@@ -26,4 +26,13 @@ public class NewOrderController {
 
     private int customerId;
 
+    public void init(int customerId){
+        this.customerId = customerId;
+    }
+
+    @FXML
+    private boolean onClick(){ //TODO: change
+        return true;
+    }
+
 }

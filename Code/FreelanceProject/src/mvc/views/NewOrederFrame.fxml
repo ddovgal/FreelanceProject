@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
@@ -7,12 +8,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="719.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.controllers.NewOrderController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="521.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.controllers.NewOrderController">
    <children>
-      <TextField fx:id="nameField" promptText="Enter new order name">
-         <FlowPane.margin>
-            <Insets />
-         </FlowPane.margin>
+      <TextField fx:id="nameField" alignment="CENTER" promptText="Enter new order name">
          <font>
             <Font size="24.0" />
          </font>
@@ -34,25 +32,31 @@
             <Insets bottom="20.0" top="20.0" />
          </padding>
       </HBox>
-      <TextArea fx:id="descriptionArea" maxHeight="9.99999999999999E14" maxWidth="9.99999999999999E14" promptText="Enter new order description" />
-      <TextArea fx:id="agreementArea" prefHeight="91.0" prefWidth="581.0" promptText="Enter new order agreement">
-         <FlowPane.margin>
-            <Insets top="20.0" />
-         </FlowPane.margin>
-      </TextArea>
-      <Button fx:id="button" mnemonicParsing="false" prefHeight="101.0" prefWidth="401.0" text="Add this order">
-         <FlowPane.margin>
-            <Insets top="40.0" />
-         </FlowPane.margin>
+      <TextArea fx:id="descriptionArea" prefHeight="214.0" prefWidth="481.0" promptText="Enter new order description" wrapText="true" VBox.vgrow="ALWAYS">
          <font>
-            <Font name="Segoe UI Light" size="47.0" />
+            <Font size="12.0" />
+         </font></TextArea>
+      <TextArea fx:id="agreementArea" prefHeight="70.0" promptText="Enter new order agreement" wrapText="true">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <font>
+            <Font size="12.0" />
          </font>
+      </TextArea>
+      <Button fx:id="button" mnemonicParsing="false" text="Add this order">
+         <font>
+            <Font size="32.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
       </Button>
    </children>
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
    <padding>
-      <Insets bottom="35.0" left="20.0" right="20.0" top="55.0" />
+      <Insets bottom="35.0" left="20.0" right="20.0" top="35.0" />
    </padding>
-</FlowPane>
+</VBox>

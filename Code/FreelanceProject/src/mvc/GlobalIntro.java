@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
-import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import mvc.controllers.LoginFormController;
@@ -41,10 +40,7 @@ public class GlobalIntro extends Application{
         primaryStage.setTitle("Login form");
         primaryStage.setScene(new Scene(root));
         primaryStage.getIcons().add(new Image("mvc/views/loginForm/loginIcon.png"));
-        primaryStage.setMinHeight(390);
-        primaryStage.setMaxHeight(500);
-        primaryStage.setMinWidth(250);
-        primaryStage.setMaxWidth(500);
+        primaryStage.setResizable(false);
 
         this.primaryStage = primaryStage;
         primaryStage.show();
@@ -73,10 +69,12 @@ public class GlobalIntro extends Application{
 
             primaryStage.setTitle("Freelance System");
             primaryStage.setScene(new Scene(root));
-            primaryStage.getIcons().add(new Image("mvc/views/favicon.png"));
+            primaryStage.getIcons().add(new Image("mvc/views/images/favicon.png"));
 
             controller.initStage(this);
 
+            primaryStage.setMinWidth(830);
+            primaryStage.setMinHeight(610);
             this.primaryStage = primaryStage;
             primaryStage.show();
         } catch (IOException e) {
@@ -84,49 +82,33 @@ public class GlobalIntro extends Application{
         }
     }
 
+
+    public FXMLLoader getLoaderWithLocation(String location){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(location));
+        return loader;
+    }
+
     public Stage getPrimaryStage(){
         return primaryStage;
     }
 
-    public void showNewOrderStage(){
-        Stage primaryStage = new Stage();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("views/NewOrederFrame.fxml"));
-
-        try {
-            FlowPane root = loader.load();
-            //MainIntroFormController controller = loader.getController();
-
-            primaryStage.setTitle("Add nw order");
-            primaryStage.setScene(new Scene(root));
-            primaryStage.getIcons().add(new Image("mvc/views/favicon.png"));
-
-            //controller.initStage(this); TODO: change
-
-            //this.primaryStage = primaryStage;
-            primaryStage.showAndWait();
-        } catch (IOException e) {
-            MessageDialogs.exceptionDialog(e, "Creating Add new order form exception", "Error at creating Add new order form");
-        }
-    }
-
-
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
-    }
-
-    public void setCurrentUserId(int currentUserId) {
-        this.currentUserId = currentUserId;
     }
 
     public int getCurrentUserId() {
         return currentUserId;
     }
 
+    public void setCurrentUserId(int currentUserId) {
+        this.currentUserId = currentUserId;
+    }
+
     @Override
     public void stop() throws Exception {
         if (Base.hasConnection()) Base.close();
-        System.out.println("GlobalIntro stop method");
+        System.out.println("GlobalIntro.stop();");
         super.stop();
     }
 }

@@ -1,6 +1,7 @@
 package mvc.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -24,6 +25,10 @@ public class LoginFormController {
     private Label messageLabel;
     @FXML
     private ImageView image;
+    @FXML
+    private CheckBox ipCheckbox;
+    @FXML
+    private TextField ipField;
 
     private GlobalIntro globalIntro;
 
@@ -33,16 +38,25 @@ public class LoginFormController {
 
     @FXML
     private void onClick(){
+        String dbHost = "localhost";
         String login = loginField.getText();
         String password = passwordField.getText();
+        boolean connectByIp = ipCheckbox.isSelected();
+
+        if (connectByIp){
+            if (ipField.getText().equals("")){
+                messageLabel.setText("Enter correct ip address.");
+                return;
+            }
+            dbHost = ipField.getText();
+        }
 
         try {
             if (!Base.hasConnection())
-                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/freelancedb", "root", "1111");
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://"+ dbHost+ ":3306/freelancedb", "admin", "1111");
         } catch (Exception e){
             MessageDialogs.exceptionDialog(e, "Connection Exception", "Error at connection to current database");
         }
-
 
         User tmpUser = User.findByLogin(login);
         if (tmpUser==null) messageLabel.setText("No such user. Check user name.");
@@ -52,6 +66,11 @@ public class LoginFormController {
             messageLabel.setText("Welcome back, "+ tmpUser.getSnf().split(" ")[1]);
             globalIntro.initMainIntro((Integer) tmpUser.getId());
         }
+    }
+
+    @FXML
+    private void cbAction(){
+        ipField.setDisable(!ipCheckbox.isSelected());
     }
 
     @FXML

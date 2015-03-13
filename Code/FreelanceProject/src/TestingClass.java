@@ -39,7 +39,7 @@ public class TestingClass {
         //-------------
         byte[] image1Bytes = user.getBytes("image");
 
-        FileOutputStream stream = new FileOutputStream("lol.png");
+        FileOutputStream stream = new FileOutputStream("tmp.png");
         try {
             stream.write(image1Bytes);
         } finally {

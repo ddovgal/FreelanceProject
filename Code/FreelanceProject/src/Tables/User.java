@@ -142,7 +142,7 @@ public class User extends Model {
 
     public Image getImage(){
         if (get("image")!=null) return new Image(new ByteArrayInputStream(getBytes("image")));
-        else return null;
+        else return new Image("mvc/views/images/user.jpg");
     }
 
 }

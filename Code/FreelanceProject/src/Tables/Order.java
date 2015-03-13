@@ -15,8 +15,9 @@ public class Order extends Model {
 
     public Order(){}
 
-    private Order(String description, String deadline, double price, int customerId, String agreement){
+    private Order(String title, String description, String deadline, double price, int customerId, String agreement){
         Order tmp = new Order();
+        tmp.setTitle(title);
         tmp.setDescription(description);
         tmp.setDeadline(deadline);
         tmp.setPrice(price);
@@ -27,8 +28,8 @@ public class Order extends Model {
         justCreatedRowId = tmp.getId();
     }
 
-    public static Order newInstance(String description, String deadline, double price, int customerId, String agreement){
-        new Order(description, deadline, price, customerId, agreement);
+    public static Order newInstance(String title, String description, String deadline, double price, int customerId, String agreement){
+        new Order(title, description, deadline, price, customerId, agreement);
         return findById(justCreatedRowId);
     }
 
@@ -36,6 +37,10 @@ public class Order extends Model {
 
     public static Order findById(int id){
         return findById(new Integer(id));
+    }
+
+    public static Order findByTitle(String title){
+        return findFirst("title = ?", title);
     }
 
     public static Order findByDescription(String description){
@@ -67,6 +72,14 @@ public class Order extends Model {
     }
 
     //----------------------------------------------Setters and getters-------------------------------------------------
+
+    public void setTitle(String title){
+        setString("title", title);
+    }
+
+    public String getTitle(){
+        return getString("title");
+    }
 
     public void setDescription(String description){
         setString("description", description);
@@ -113,7 +126,7 @@ public class Order extends Model {
     }
 
     public int getDeveloperId(){
-        return getInteger("developer_id");
+        return getInteger("developer_id")!=null ? getInteger("developer_id") : 0;
     }
 
     public void setAgreement(String agreement){

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox alignment="CENTER" prefHeight="92.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.controllers.customList.DeveloperCell">
+   <children>
+      <HBox minWidth="180.0">
+         <children>
+            <ImageView fx:id="devImage" fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user.jpg" />
+               </image>
+            </ImageView>
+             <VBox alignment="CENTER_LEFT">
+                <children>
+                     <Label fx:id="devSnfLabel" text="developerSNF">
+                         <font>
+                             <Font size="18.0" />
+                         </font>
+                     </Label>
+                    <Label fx:id="emailLabel" text="email">
+                       <font>
+                           <Font size="13.0" />
+                       </font>
+                    </Label>
+                  <ProgressBar fx:id="ratingBar" minHeight="0.0" prefHeight="10.0" progress="0.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></ProgressBar>
+                </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+             </VBox>
+         </children>
+         <HBox.margin>
+            <Insets bottom="5.0" left="20.0" top="5.0" />
+         </HBox.margin>
+      </HBox>
+      <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </HBox.margin>
+      </VBox>
+      <GridPane minWidth="190.0" prefWidth="190.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <HBox.margin>
+            <Insets bottom="5.0" right="20.0" top="10.0" />
+         </HBox.margin>
+         <children>
+            <Button fx:id="ordersButton" focusTraversable="false" mnemonicParsing="false" onAction="#ordersAction" text="See his orders" />
+            <Button fx:id="rateHimButton" focusTraversable="false" mnemonicParsing="false" onAction="#rateAction" prefWidth="84.0" text="Rate him" GridPane.columnIndex="1" />
+            <Button fx:id="messageHimButton" focusTraversable="false" mnemonicParsing="false" onAction="#messageAction" prefWidth="84.0" text="Message him" GridPane.rowIndex="1" />
+            <Button fx:id="smthElseButton" disable="true" mnemonicParsing="false" onAction="#smthAction" prefWidth="84.0" text="..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</HBox>
